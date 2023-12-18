@@ -15,6 +15,8 @@ How to deploy this sandbox.
 1. git clone...
 2. cd your/project/directory 
 3. composer update
+   (Bugs happen. In case errors while cache:clear try to update php-fpm dockerfile with current alpine php repository instruction. 
+   In my case it was "FROM php:8.3.0-fpm-alpine3.19". It helped me for now! I'll investigate this case later. )
 4. create and configure .env.local, .env.test.local files. You need to replace "!ChangeMe!" strings.
 5. execute "make dc_build dc_up"
 6. execute "make app_bash" to get into the container.
